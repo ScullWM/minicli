@@ -6,7 +6,7 @@ use Minicli\Output\PrinterAdapterInterface;
 
 class DefaultPrinterAdapter implements PrinterAdapterInterface
 {
-    public function out($message)
+    public function out(string $message)
     {
         echo $message;
     }

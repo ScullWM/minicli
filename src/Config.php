@@ -20,7 +20,7 @@ class Config implements ServiceInterface
      * @param string $name
      * @return string|null
      */
-    public function __get($name)
+    public function __get(string $name)
     {
         return isset($this->config[$name]) ? $this->config[$name] : null;
     }
@@ -29,12 +29,12 @@ class Config implements ServiceInterface
      * @param string $name
      * @param string $value
      */
-    public function __set($name, $value)
+    public function __set(string $name, string $value)
     {
         $this->config[$name] = $value;
     }
 
-    public function has($name)
+    public function has(string $name)
     {
         return isset($this->config[$name]);
     }

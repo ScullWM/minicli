@@ -37,7 +37,7 @@ class CommandCall
         $this->subcommand = isset($this->args[2]) ? $this->args[2] : 'default';
     }
 
-    protected function parseCommand($argv)
+    protected function parseCommand(array $argv)
     {
         foreach ($argv as $arg) {
 
@@ -61,7 +61,7 @@ class CommandCall
      * @param string $param
      * @return bool
      */
-    public function hasParam($param)
+    public function hasParam(string $param)
     {
         return isset($this->params[$param]);
     }
@@ -70,7 +70,7 @@ class CommandCall
      * @param string $flag
      * @return bool
      */
-    public function hasFlag($flag)
+    public function hasFlag(string $flag)
     {
         return in_array($flag, $this->flags);
     }
@@ -79,7 +79,7 @@ class CommandCall
      * @param string $param
      * @return string|null
      */
-    public function getParam($param)
+    public function getParam(string $param)
     {
         return $this->hasParam($param) ? $this->params[$param] : null;
     }

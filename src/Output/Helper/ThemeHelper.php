@@ -36,7 +36,8 @@ class ThemeHelper
      * Parses the theme config setting and returns a namespaced class name.
      * @return string
      */
-    protected function parseThemeSetting($theme_config) {
+    protected function parseThemeSetting(string $theme_config)
+    {
 
         if (!$theme_config) {
             return '';

@@ -10,7 +10,7 @@ class Input
     /** @var string */
     protected $prompt;
 
-    public function __construct($prompt = 'minicli$> ')
+    public function __construct(string $prompt = 'minicli$> ')
     {
         $this->setPrompt($prompt);
     }

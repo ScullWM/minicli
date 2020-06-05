@@ -21,7 +21,7 @@ class CommandRegistry implements ServiceInterface
      * CommandRegistry constructor.
      * @param string $commands_path
      */
-    public function __construct($commands_path)
+    public function __construct(string $commands_path)
     {
         $this->commands_path = $commands_path;
     }
@@ -45,7 +45,7 @@ class CommandRegistry implements ServiceInterface
      * @param string $command_namespace
      * @return void
      */
-    public function registerNamespace($command_namespace)
+    public function registerNamespace(string $command_namespace)
     {
         $namespace = new CommandNamespace($command_namespace);
         $namespace->loadControllers($this->getCommandsPath());
@@ -56,7 +56,7 @@ class CommandRegistry implements ServiceInterface
      * @param string $command
      * @return CommandNamespace
      */
-    public function getNamespace($command)
+    public function getNamespace(string $command)
     {
         return isset($this->namespaces[$command]) ? $this->namespaces[$command] : null;
     }
@@ -74,7 +74,7 @@ class CommandRegistry implements ServiceInterface
      * @param string $name
      * @param callable $callable
      */
-    public function registerCommand($name, $callable)
+    public function registerCommand(string $name, $callable)
     {
         $this->default_registry[$name] = $callable;
     }
@@ -83,7 +83,7 @@ class CommandRegistry implements ServiceInterface
      * @param string $command
      * @return callable|null
      */
-    public function getCommand($command)
+    public function getCommand(string $command)
     {
         return isset($this->default_registry[$command]) ? $this->default_registry[$command] : null;
     }
@@ -93,7 +93,7 @@ class CommandRegistry implements ServiceInterface
      * @param string $subcommand
      * @return CommandController | null
      */
-    public function getCallableController($command, $subcommand = "default")
+    public function getCallableController(string $command, string $subcommand = "default")
     {
         $namespace = $this->getNamespace($command);
 
@@ -109,7 +109,7 @@ class CommandRegistry implements ServiceInterface
      * @return callable|null
      * @throws \Exception
      */
-    public function getCallable($command)
+    public function getCallable(string $command)
     {
         $single_command = $this->getCommand($command);
         if ($single_command === null) {

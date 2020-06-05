@@ -15,7 +15,7 @@ class FilePrinterAdapter implements PrinterAdapterInterface
      * FilePrinterAdapter constructor.
      * @param $output_file
      */
-    public function __construct($output_file)
+    public function __construct(string $output_file)
     {
         $this->output_file = $output_file;
     }
@@ -26,7 +26,7 @@ class FilePrinterAdapter implements PrinterAdapterInterface
      * @param null $style
      * @return bool
      */
-    public function out($message, $style = null)
+    public function out(string $message)
     {
 
         $fp = fopen($this->output_file, "a+");

@@ -46,7 +46,7 @@ class ColorOutputFilter implements OutputFilterInterface
      * @param string $style
      * @return string the resulting string
      */
-    public function filter($message, $style = "default"): string
+    public function filter(string $message, string $style = "default"): string
     {
         return $this->format($message, $style);
     }
@@ -57,7 +57,7 @@ class ColorOutputFilter implements OutputFilterInterface
      * @param string $style
      * @return string
      */
-    public function format($message, $style = "default"): string
+    public function format(string $message, string $style = "default"): string
     {
         $style_colors = $this->theme->getStyle($style);
 

@@ -43,7 +43,7 @@ class App
      * @param string $name
      * @return ServiceInterface|null
      */
-    public function __get($name)
+    public function __get(string $name)
     {
         if (!array_key_exists($name, $this->services)) {
             return null;
@@ -60,7 +60,7 @@ class App
      * @param string $name
      * @param ServiceInterface $service
      */
-    public function addService($name, ServiceInterface $service)
+    public function addService(string $name, ServiceInterface $service)
     {
         $this->services[$name] = $service;
     }
@@ -68,7 +68,7 @@ class App
     /**
      * @param string $name
      */
-    public function loadService($name)
+    public function loadService(string $name)
     {
         $this->loaded_services[$name] = $this->services[$name]->load($this);
     }
@@ -109,7 +109,7 @@ class App
     /**
      * @param string $app_signature
      */
-    public function setSignature($app_signature)
+    public function setSignature(string $app_signature)
     {
         $this->app_signature = $app_signature;
     }
@@ -133,7 +133,7 @@ class App
      * @param string $name
      * @param callable $callable
      */
-    public function registerCommand($name, $callable)
+    public function registerCommand(string $name, $callable)
     {
         $this->command_registry->registerCommand($name, $callable);
     }

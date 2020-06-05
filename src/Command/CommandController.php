@@ -67,7 +67,7 @@ abstract class CommandController implements ControllerInterface
      * @param string $param
      * @return bool
      */
-    protected function hasParam($param)
+    protected function hasParam(string $param)
     {
         return $this->input->hasParam($param);
     }
@@ -76,16 +76,16 @@ abstract class CommandController implements ControllerInterface
      * @param string $flag
      * @return bool
      */
-    protected function hasFlag($flag)
+    protected function hasFlag(string $flag)
     {
         return $this->input->hasFlag($flag);
     }
 
     /**
-     * @param $param
+     * @param string $param
      * @return null
      */
-    protected function getParam($param)
+    protected function getParam(string $param)
     {
         return $this->input->getParam($param);
     }

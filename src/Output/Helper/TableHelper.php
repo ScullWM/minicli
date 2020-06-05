@@ -42,7 +42,7 @@ class TableHelper
      * @param array $header
      * @param string $style
      */
-    public function addHeader(array $header, $style = 'alt'): void
+    public function addHeader(array $header, string $style = 'alt'): void
     {
         $this->insertTableRow($header, $style);
     }
@@ -71,7 +71,7 @@ class TableHelper
      * @param array $row
      * @param string $style
      */
-    public function addRow(array $row, $style = 'default'): void
+    public function addRow(array $row, string $style = 'default'): void
     {
         $this->insertTableRow($row, $style);
     }
@@ -100,7 +100,7 @@ class TableHelper
      * @param array $row
      * @param string $style
      */
-    protected function insertTableRow(array $row, $style = 'default')
+    protected function insertTableRow(array $row, string $style = 'default')
     {
         $this->table_rows[] = $row;
         $this->styled_rows[] = [ 'row' => $row, 'style' => $style ];
@@ -111,7 +111,7 @@ class TableHelper
      * @param int $min_col_size
      * @return array
      */
-    protected function calculateColumnSizes($min_col_size = 5): array
+    protected function calculateColumnSizes(int $min_col_size = 5): array
     {
         $column_sizes = [];
 
@@ -126,7 +126,7 @@ class TableHelper
                 $column_count++;
             }
         }
-        
+
         return $column_sizes;
     }
 
@@ -136,7 +136,7 @@ class TableHelper
      * @param int $col_size
      * @return string
      */
-    protected function getRowAsString(array $row, $col_size = 5): string
+    protected function getRowAsString(array $row, int $col_size = 5): string
     {
         //first, determine the size of each column
         $column_sizes = $this->calculateColumnSizes();
@@ -156,7 +156,7 @@ class TableHelper
      * @param int $col_size
      * @return string
      */
-    protected function getPaddedString($table_cell, $col_size = 5): string
+    protected function getPaddedString(string $table_cell, int $col_size = 5): string
     {
         return str_pad($table_cell, $col_size);
     }
